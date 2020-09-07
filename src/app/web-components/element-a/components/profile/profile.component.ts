@@ -19,4 +19,8 @@ export class ProfileComponent implements OnInit{
   public navigateToHome() {
     this.router.navigate([{outlets: {elementA: null}}]);
   }
+
+  public navigateToPictures() {
+    this.router.navigate([{outlets: {elementA: 'pictures'}}]);
+  }
 }
