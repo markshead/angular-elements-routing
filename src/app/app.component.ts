@@ -14,7 +14,7 @@ export class AppComponent implements OnInit {
   constructor(private loader: LazyModuleService, private hostLocation: HostLocationService) { }
 
   ngOnInit() {
-    this.loader.load(false);
+    this.loader.load(true);
     this.hostLocation.handleNavigation();
   }
 }

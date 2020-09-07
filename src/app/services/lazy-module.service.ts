@@ -9,19 +9,20 @@ export class LazyModuleService {
 
     private moduleRef: NgModuleRef<any>;
 
-    public load(loadBoth: boolean = true) {
+    public load(loadAll: boolean = true) {
         if (this.moduleRef) {
             return Promise.resolve();
         }
 
-        console.log('loading modules...');
+        console.log('loading modules...', loadAll);
 
         const paths: string[] = [
             'src/app/web-components/element-a/element-a.module#ElementAModule',
-            'src/app/web-components/element-b/element-b.module#ElementBModule'
+            'src/app/web-components/element-b/element-b.module#ElementBModule',
+            'src/app/web-components/element-c/element-c.module#ElementCModule'
         ];
 
-        if (loadBoth) {
+        if (loadAll) {
             return paths.forEach(modulePath => {
                 return this.loader
                 .load(modulePath)
